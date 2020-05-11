@@ -1,7 +1,8 @@
 package ro.msg.learning.shop.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -10,6 +11,9 @@ import java.util.List;
 @Entity
 @Data
 @Table
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString(exclude = {"stockList"})
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,14 +24,15 @@ public class Product {
     private Double weight;
     private String imageUrl;
 
-    @JsonIgnore
+    @JsonProperty
     @ManyToOne
     private ProductCategory category;
 
-    @JsonIgnore
+    @JsonProperty
     @ManyToOne
     private Supplier supplier;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<Stock> stockList;
 

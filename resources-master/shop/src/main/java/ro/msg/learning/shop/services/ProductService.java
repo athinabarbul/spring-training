@@ -31,7 +31,7 @@ public class ProductService {
 	}
 
 	public void addNewProduct(Product newProduct) {
-		productRepository.save(newProduct);
+		 productRepository.save(newProduct);
 	}
 
 	public void updateProductById(Integer productId, Product product) {
@@ -60,7 +60,7 @@ public class ProductService {
 			if (product.getSupplier() != null) {
 				updateProduct.get().setSupplier(product.getSupplier());
 			}
-			productRepository.save(updateProduct.get());
+			 productRepository.save(updateProduct.get());
 		}
 	}
 }
