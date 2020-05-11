@@ -1,5 +1,6 @@
 package ro.msg.learning.shop.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,9 +20,11 @@ public class Product {
     private Double weight;
     private String imageUrl;
 
+    @JsonIgnore
     @ManyToOne
     private ProductCategory category;
 
+    @JsonIgnore
     @ManyToOne
     private Supplier supplier;
 

@@ -9,6 +9,7 @@ import ro.msg.learning.shop.mapper.ProductMapper;
 import ro.msg.learning.shop.repositories.ProductCategoryRepository;
 import ro.msg.learning.shop.repositories.ProductRepository;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -29,4 +30,37 @@ public class ProductService {
 		}).collect(Collectors.toList());
 	}
 
+	public void addNewProduct(Product newProduct) {
+		productRepository.save(newProduct);
+	}
+
+	public void updateProductById(Integer productId, Product product) {
+		Optional<Product> updateProduct = productRepository.findById(productId);
+		if (!updateProduct.isPresent()) {
+			throw new EntityNotFoundException();
+		} else {
+			if (product.getName() != null) {
+				updateProduct.get().setName(product.getName());
+			}
+			if (product.getDescription() != null) {
+				updateProduct.get().setDescription(product.getDescription());
+			}
+			if (product.getImageUrl() != null) {
+				updateProduct.get().setImageUrl(product.getImageUrl());
+			}
+			if (product.getPrice() != null) {
+				updateProduct.get().setPrice(product.getPrice());
+			}
+			if (product.getWeight() != null) {
+				updateProduct.get().setWeight(product.getWeight());
+			}
+			if (product.getCategory() != null) {
+				updateProduct.get().setCategory(product.getCategory());
+			}
+			if (product.getSupplier() != null) {
+				updateProduct.get().setSupplier(product.getSupplier());
+			}
+			productRepository.save(updateProduct.get());
+		}
+	}
 }
