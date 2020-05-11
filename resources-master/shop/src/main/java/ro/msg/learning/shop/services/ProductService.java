@@ -63,4 +63,8 @@ public class ProductService {
 			 productRepository.save(updateProduct.get());
 		}
 	}
+
+	public void deleteExistingProduct(Integer productId){
+		productRepository.deleteById(productId);
+	}
 }
