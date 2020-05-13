@@ -1,6 +1,7 @@
 package ro.msg.learning.shop.entities;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 @Entity
 @Data
 @Table
+@ToString(exclude = {"ordersList"})
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

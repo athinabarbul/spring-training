@@ -1,6 +1,7 @@
 package ro.msg.learning.shop.entities;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 @Entity
 @Data
 @Table
+@ToString(exclude = {"stockList","orderDetailList","revenueList"})
 public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +24,7 @@ public class Location {
     private List<Stock> stockList;
 
     @OneToMany(mappedBy = "shippedFrom")
-    private List<Orders> ordersList;
+    private List<OrderDetail> orderDetailList;
 
     @OneToMany(mappedBy = "location")
     private List<Revenue> revenueList;

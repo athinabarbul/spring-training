@@ -1,8 +1,8 @@
 package ro.msg.learning.shop.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import ro.msg.learning.shop.composite.ids.OrderDetailId;
 import ro.msg.learning.shop.entities.OrderDetail;
-import ro.msg.learning.shop.entities.Orders;
 
-public interface OrderDetailRepository extends JpaRepository<OrderDetail, Orders> {
+public interface OrderDetailRepository extends JpaRepository<OrderDetail, OrderDetailId> {
 }

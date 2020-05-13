@@ -1,16 +1,20 @@
 package ro.msg.learning.shop.composite.ids;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import ro.msg.learning.shop.entities.Orders;
-import ro.msg.learning.shop.entities.Product;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrderDetailId implements Serializable {
-    private Orders orders;
-    private Product product;
+	private Integer ordersId;
+	private Integer productId;
 
 }

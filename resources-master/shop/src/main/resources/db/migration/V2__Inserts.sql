@@ -65,8 +65,46 @@ insert into product values (48, 'DualView Startonight Painting', 'https://s12ema
 insert into product values (49, 'DualView Startonight Painting', 'https://s12emagst.akamaized.net/products/13457/13456452/images/res_e9b75bf406df1558f401589704e7cd69_450x450_r4c8.jpg','DualView Startonight Painting',139.99,8.8,5,2);
 insert into product values (50, 'DualView Startonight Painting', 'https://s12emagst.akamaized.net/products/13457/13456452/images/res_e9b75bf406df1558f401589704e7cd69_450x450_r4c8.jpg','DualView Startonight Painting',139.99,8.7,5,5);
 
-insert into location values (1, 'Bucuresti', 'Romania', 'Bucuresti', 'Ilfov','Str. 1 Mai nr.73');
-insert into location values (2, 'Timisoara', 'Romania', 'Timisoara', 'Timis','Str. Martir Remus Tasala nr.5');
-insert into location values (3, 'Constanta', 'Romania', 'Constanta', 'Constanta','Str. Marii nr.5');
-insert into location values (4, 'Iasi', 'Romania', 'Iasi', 'Iasi','Str. Republicii nr.33');
-insert into location values (5, 'Arad', 'Romania', 'Arad', 'Arad','Str. Clujului nr.114');
+insert into location values (1, 'Bucuresti', 'Romania', 'Ilfov', 'Calea Vitan Nr. 55-59','Bucuresti');
+insert into location values (2, 'Timisoara', 'Romania', 'Timis', 'Str. Demetriade, Nr. 1, Sp. T 10','Timisoara');
+insert into location values (3, 'Novi Sad', 'Serbia', 'South Bačka', 'Kralja Aleksandra 3','Novi Sad');
+insert into location values (4, 'Niš', 'Serbia', 'Nišava', 'Obrenovićeva 1','Niš');
+insert into location values (5, 'Arad', 'Romania', 'Arad', 'Calea Aurel Vlaicu Nr. 10-12','Arad');
+insert into location values (6, 'Budapest', 'Hungary', 'Budapest', 'József krt. 5','Budapest');
+insert into location values (7, 'Szeged', 'Hungary', 'Csongrád', 'Londoni krt. 3','Szeged');
+insert into location values (8, 'Wien', 'Austria', 'Wien', 'Kärntner Str. 28','Wien');
+insert into location values (9, 'Graz', 'Austria', 'Steiermark', 'Murgasse 1','Graz');
+insert into location values (10, 'Vösendorf', 'Austria', 'Niederösterreich', 'Vösendorfer Südring','Vösendorf');
+
+insert into revenue values (1, '2020-01-13', 548652564.855, 1);
+insert into revenue values (2, '2020-01-13', 54948623.33, 2);
+insert into revenue values (3, '2020-01-13', 78423454.99, 3);
+insert into revenue values (4, '2020-01-13', 475122.22, 4);
+insert into revenue values (5, '2020-01-13', 114452485.145, 5);
+insert into revenue values (6, '2020-01-13', 47513.33, 6);
+insert into revenue values (7, '2020-01-13', 21546556.66, 7);
+insert into revenue values (8, '2020-01-13', 77852546643.88, 8);
+insert into revenue values (9, '2020-01-13', 100022554.66, 9);
+insert into revenue values (10, '2020-01-13', 45478454574.99, 10);
+
+insert into customer values (1, 'abc@gmail.com', 'AB', 'C', '1234', 'abc');
+insert into customer values (2, 'def@gmail.com', 'DE', 'F', '1234', 'def');
+insert into customer values (3, 'ghi@gmail.com', 'GH', 'I', '1234', 'ghi');
+insert into customer values (4, 'jkl@gmail.com', 'JK', 'L', '1234', 'jkl');
+insert into customer values (5, 'mnop@gmail.com', 'MN', 'OP', '1234', 'mnop');
+
+insert into stock values (30, 9, 1);
+insert into stock values (16, 8, 1);
+insert into stock values (12, 5, 1);
+
+insert into stock values (20, 9, 16);
+insert into stock values (27, 8, 16);
+insert into stock values (22, 2, 16);
+
+insert into stock values (8, 9, 27);
+insert into stock values (15, 8, 27);
+insert into stock values (4, 4, 27);
+
+insert into stock values (46, 3, 42);
+insert into stock values (45, 5, 42);
+insert into stock values (70, 7, 42);

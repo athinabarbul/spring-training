@@ -1,15 +1,19 @@
 package ro.msg.learning.shop.composite.ids;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import ro.msg.learning.shop.entities.Location;
-import ro.msg.learning.shop.entities.Product;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class StockId implements Serializable {
-    private Product product;
-    private Location location;
+	private Integer productId;
+	private Integer locationId;
 }
