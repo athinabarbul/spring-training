@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface StockRepository extends JpaRepository<Stock, StockId> {
+	@Query(value = "select * from Stock s where s.location_id = ?1", nativeQuery = true)
+	List<Stock> getStocksForLocation(Integer locationId);
+
 	@Query(value = "select s.location_id from Stock s where s.quantity >= ?1 and s.product_id = ?2", nativeQuery = true)
 	List<Integer> getLocationsForProduct(Integer quantity, Integer productId);
 
