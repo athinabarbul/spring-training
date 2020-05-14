@@ -59,8 +59,8 @@ public class MostAbundantStrategyTest {
 		location.setStockList(Collections.singletonList(stock));
 
 		when(locationRepository.findById(any())).thenReturn(Optional.of(location));
-		when(stockRepository.getLocationsForProduct(eq(7), anyInt())).thenReturn(Collections.singletonList(location.getId()));
-		when(stockRepository.getLocationsForProduct(eq(85), anyInt())).thenThrow(StrategyException.class);
+		when(stockRepository.getMostAbundantStockForProduct(anyInt(), eq(7))).thenReturn(Optional.ofNullable(location.getId()));
+		when(stockRepository.getMostAbundantStockForProduct(anyInt(), eq(85))).thenThrow(StrategyException.class);
 
 		mostAbundantStrategy = new MostAbundantStrategy();
 	}
