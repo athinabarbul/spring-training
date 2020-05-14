@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class StockDto {
-	private ProductDto productDto;
+	private Integer productId;
+	private Integer locationId;
 	private Integer quantity;
 }

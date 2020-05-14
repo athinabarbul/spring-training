@@ -3,7 +3,6 @@ package ro.msg.learning.shop.services;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ro.msg.learning.shop.dtos.StockDto;
-import ro.msg.learning.shop.mapper.ProductMapper;
 import ro.msg.learning.shop.mapper.StockDtoMapper;
 import ro.msg.learning.shop.repositories.StockRepository;
 
@@ -15,10 +14,9 @@ import java.util.stream.Collectors;
 public class StockService {
 	private final StockRepository stockRepository;
 	private final StockDtoMapper stockDtoMapper;
-	private final ProductMapper productMapper;
 
 	public List<StockDto> exportStockForLocation(Integer locationId) {
 		return this.stockRepository.getStocksForLocation(locationId).stream()
-				.map(stock -> stockDtoMapper.mapToStockDto(stock, productMapper)).collect(Collectors.toList());
+				.map(stockDtoMapper::mapToStockDto).collect(Collectors.toList());
 	}
 }

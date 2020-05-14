@@ -12,10 +12,10 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Builder
 public class ProductDto {
-    private String name;
-    private String description;
-    private BigDecimal price;
-    private Double weight;
-    private String category;
-    private String categoryDescription;
+	private String name;
+	private String description;
+	private BigDecimal price;
+	private Double weight;
+	private String category;
+	private String categoryDescription;
 }
