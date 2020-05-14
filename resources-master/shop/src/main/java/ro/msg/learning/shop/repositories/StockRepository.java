@@ -15,6 +15,6 @@ public interface StockRepository extends JpaRepository<Stock, StockId> {
 	@Query(value = "select s.location_id from Stock s where s.quantity >= ?1 and s.product_id = ?2", nativeQuery = true)
 	List<Integer> getLocationsForProduct(Integer quantity, Integer productId);
 
-	@Query(value = "select s.location_id from Stock s where s.product_id = ?1 order by s.quantity desc limit 1", nativeQuery = true)
-	Optional<Integer> getMostAbundantStockForProduct(Integer productId);
+	@Query(value = "select s.location_id from Stock s where s.product_id = ?1 and s.quantity>= ?2 order by s.quantity desc limit 1", nativeQuery = true)
+	Optional<Integer> getMostAbundantStockForProduct(Integer productId, Integer quantity);
 }
