@@ -11,29 +11,30 @@ import java.util.List;
 @Entity
 @Data
 @Table
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString(exclude = {"stockList"})
 public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String name;
-    private String description;
-    private BigDecimal price;
-    private Double weight;
-    private String imageUrl;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String name;
+	private String description;
+	private BigDecimal price;
+	private Double weight;
+	private String imageUrl;
 
-    @JsonProperty
-    @ManyToOne
-    private ProductCategory category;
+	@JsonProperty
+	@ManyToOne
+	private ProductCategory category;
 
-    @JsonProperty
-    @ManyToOne
-    private Supplier supplier;
+	@JsonProperty
+	@ManyToOne
+	private Supplier supplier;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "product")
-    private List<Stock> stockList;
+	@JsonIgnore
+	@OneToMany(mappedBy = "product")
+	private List<Stock> stockList;
 
 }
