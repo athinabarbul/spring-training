@@ -1,5 +1,6 @@
 package ro.msg.learning.shop.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.ToString;
 
@@ -20,12 +21,15 @@ public class Location {
     private String addressCity;
     private String addressStreet;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "location")
     private List<Stock> stockList;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "shippedFrom")
     private List<OrderDetail> orderDetailList;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "location")
     private List<Revenue> revenueList;
 

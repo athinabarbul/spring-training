@@ -1,5 +1,6 @@
 package ro.msg.learning.shop.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.ToString;
 
@@ -20,6 +21,7 @@ public class Customer {
     private String password;
     private String emailAddress;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "customer")
     private List<Orders> ordersList;
 }

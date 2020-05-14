@@ -1,5 +1,6 @@
 package ro.msg.learning.shop.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ public class Revenue {
     private LocalDate date;
     private BigDecimal sum;
 
+    @JsonProperty
     @ManyToOne
     private Location location;
 

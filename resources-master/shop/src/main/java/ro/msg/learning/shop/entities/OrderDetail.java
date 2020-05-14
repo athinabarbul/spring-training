@@ -1,6 +1,7 @@
 package ro.msg.learning.shop.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,13 +28,15 @@ public class OrderDetail {
 
     @ManyToOne
     @JoinColumn(name = "orders_id", insertable = false, updatable = false)
-    @JsonIgnore
+    @JsonProperty
     private Orders orders;
 
     @ManyToOne
     @JoinColumn(name = "product_id", insertable = false, updatable = false)
+    @JsonProperty
     private Product product;
 
+    @JsonProperty
     @ManyToOne
     private Location shippedFrom;
 

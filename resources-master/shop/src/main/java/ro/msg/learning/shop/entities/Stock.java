@@ -1,5 +1,6 @@
 package ro.msg.learning.shop.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import ro.msg.learning.shop.composite.ids.StockId;
 
@@ -14,6 +15,7 @@ public class Stock {
     @Column(name = "product_id")
     private Integer productId;
 
+    @JsonProperty
     @ManyToOne
     @JoinColumn(name = "product_id", insertable = false, updatable = false)
     private Product product;
@@ -22,6 +24,7 @@ public class Stock {
     @Column(name = "location_id")
     private Integer locationId;
 
+    @JsonProperty
     @ManyToOne
     @JoinColumn(name = "location_id", insertable = false, updatable = false)
     private Location location;
