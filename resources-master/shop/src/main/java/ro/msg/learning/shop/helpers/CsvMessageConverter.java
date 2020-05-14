@@ -35,7 +35,7 @@ public class CsvMessageConverter<T> extends AbstractGenericHttpMessageConverter<
 		return stockLines.readAll();
 	}
 
-	public void toCsv(Class<T> tClass, List<T> tList, OutputStream outputStream) throws IOException {
+	public static <T> void toCsv(Class<?> tClass, List<T> tList, OutputStream outputStream) throws IOException {
 
 		CsvMapper csvMapper = new CsvMapper();
 		CsvSchema csvSchema = csvMapper.schemaFor(tClass).withHeader().withColumnReordering(false);
