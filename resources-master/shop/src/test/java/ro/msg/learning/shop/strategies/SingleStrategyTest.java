@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ro.msg.learning.shop.entities.Location;
 import ro.msg.learning.shop.entities.OrderDetail;
 import ro.msg.learning.shop.entities.Product;
@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class SingleStrategyTest {
 	@Mock
@@ -62,7 +62,7 @@ public class SingleStrategyTest {
 		when(locationRepository.findById(any())).thenReturn(Optional.of(location));
 		when(stockRepository.getLocationsForProduct(eq(7), anyInt())).thenReturn(Collections.singletonList(location.getId()));
 		when(stockRepository.getLocationsForProduct(eq(85), anyInt())).thenThrow(StrategyException.class);
-		
+
 		singleLocationStrategy = new SingleStrategy();
 	}
 

@@ -3,7 +3,7 @@ package ro.msg.learning.shop.helpers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ro.msg.learning.shop.dtos.StockDto;
 
 import java.io.*;
@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.springframework.test.util.AssertionErrors.assertEquals;
 
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class CsvMessageConverterTest {
 
